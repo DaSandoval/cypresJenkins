@@ -1,0 +1,41 @@
+{
+  "name": "ses-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cypress run --reporter mochawesome",
+    "cypress": "cypress open",
+    "generate_mochawesome_report": "marge mochawesome-report/output.json",
+    "cypress:ci": "concurrently \"cypress run\" --kill-others \"ng serve\" --success first",
+    "lint": "eslint cypress -c .eslintrc.json --ext js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.jalasoft.local/jimmy.vargas/ses-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "cypress": "^3.3.1",
+    "cypress-commands": "^0.2.0",
+    "cypress-cucumber-preprocessor": "^1.11.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-import": "^2.17.3",
+    "mocha": "^5.2.0",
+    "mochawesome": "^4.0.1",
+    "mochawesome-merge": "^2.0.1",
+    "mochawesome-report-generator": "^4.0.0"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/integration/cucumber/step_definitions"
+  }
+}

@@ -1,0 +1,53 @@
+{
+    "boardName": {
+        "projectOtan": "Project OTAN",
+        "projectElis": "Project Elis",
+        "projectChampion": "Project the Champion"
+    },
+    "cardName": {
+        "environment": "prepare work environment",
+        "review": "review framework",
+        "research": "research API",
+        "implement": "implement example",
+        "diagram": "make a class diagram",
+        "codeReview": "code review"
+    },
+    "listName": {
+        "toDo": "To Do",
+        "inProgress": "In Progress",
+        "complete": "Complete",
+        "bloqued": "Bloqued"
+    },
+    "permits": {
+        "private": "Privado",
+        "public": "Público"
+    },
+    "list": [
+        {
+            "listName": "To Do"
+        },
+        {
+            "listName": "In Progress"
+        },
+        {
+            "listName": "Bloqued"
+        },
+        {
+            "listName": "Complete"
+        }
+    ],
+    "listCards": [
+        {
+            "card": "research"
+        },
+        {
+            "card": "javascrip"
+        },
+        {
+            "card": "python"
+        },
+        {
+            "card": "java"
+        }
+    ]
+}

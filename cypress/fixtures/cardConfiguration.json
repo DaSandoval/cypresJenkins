@@ -1,0 +1,43 @@
+{
+    "addDescription": {
+        "finishCode": "This feature have that finished next day.",
+        "codeReview": "You need perform a code review before to complete pass.",
+        "update": "You need update your code and review the comments"
+    },
+    "addComment": {
+        "commentMethod": "Review the comments in the method login.",
+        "commentClass": "Review the class BoardsPage.",
+        "commentMR": "Update your Merge Request.",
+        "commentMoveCard": "Pass this card to the list Complete."
+    },
+    "addLabels": {
+        "labelNull": "label-null",
+        "green": "green",
+        "blue": "blue",
+        "yellow": "yellow",
+        "orange": "orange",
+        "red": "red",
+        "purple": "purple",
+        "skyblue": "sky",
+        "pink": "pink",
+        "black": "black"
+    },
+    "reminder": {
+        "beforeNone": "-1",
+        "before0Min": "0",
+        "before5Min": "5",
+        "before10Min": "10",
+        "before15Min": "15",
+        "before60Min": "60",
+        "before120Min": "120",
+        "before1440Min": "1440",
+        "before2880Min": "2880"
+    },
+    "expirationDate": {
+        "future": "future",
+        "past": "past",
+        "now": "now",
+        "soon": "soon",
+        "complete": "complete"
+    }
+}

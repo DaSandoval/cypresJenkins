@@ -1,0 +1,7 @@
+{
+    "create": {
+        "boardName": "TestBoard",
+        "columnName": "newColumn",
+        "cardName": "newCard"
+    }
+}
