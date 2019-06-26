@@ -8,9 +8,9 @@ pipeline {
     }
 
     stages {
-        stage('Dependencies') {
+        stage('Install Dependencies') {
             steps {
-                sh 'npm i'
+                sh 'npm install'
             }
         }
         stage('Build') {
@@ -21,11 +21,6 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 sh 'npm run test'
-            }
-        }
-        stage('e2e Tests') {
-            steps {
-                sh 'npm run cypress:ci'
             }
         }
         stage('Deploy') {
