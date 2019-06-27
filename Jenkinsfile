@@ -3,10 +3,9 @@ pipeline {
 
   tools {nodejs "node"}
   environment {
-    registry = "disckmastrer@yahoo.com"
-    registryCredential = 'danielsandoval1088'
-    dockerImage = ''
-  }
+        AWS_ACCESS_KEY_ID     = credentials('daniel')
+        AWS_SECRET_ACCESS_KEY = credentials('daniel')
+    }
   stages {
     stage('Cloning Git') {
       steps {
