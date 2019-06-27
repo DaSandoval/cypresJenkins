@@ -1,29 +1,27 @@
 pipeline {
-    agent any
+  agent any
     
-    environment {
-        CHROME_BIN = '/bin/google-chrome'
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/DaSandoval/cypresJenkins'
+      }
     }
-    stages {
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
-        stage('Unit Tests') {
-            steps {
-                sh 'npm run test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
+    stage('Install dependencies') {
+      steps {
+        sh 'npm install'
+      }
     }
+     
+    stage('Test') {
+      steps {
+         sh 'npm run test'
+      }
+    }      
+  }
 }
+
