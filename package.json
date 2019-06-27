@@ -7,7 +7,6 @@
     "test": "./node_modules/.bin/cypress run --reporter mochawesome",
     "cypress": "cypress open",
     "generate_mochawesome_report": "marge mochawesome-report/output.json",
-    "cypress:ci": "concurrently \"cypress run\" --kill-others \"ng serve\" --success first",
     "lint": "eslint cypress -c .eslintrc.json --ext js"
   },
   "repository": {
@@ -18,7 +17,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0",
     "cypress": "^3.3.1",
     "cypress-commands": "^0.2.0",
     "cypress-cucumber-preprocessor": "^1.11.2",
