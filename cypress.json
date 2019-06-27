@@ -1,5 +1,11 @@
 {
   "baseUrl": "https://trello.com",
   "viewportWidth": 1900,
-  "viewportHeight": 1200
+  "viewportHeight": 1200,
+  "reporter": "mochawesome",
+    "reporterOptions": {
+      "overwrite": false,
+      "html": true,
+      "json": true
+    }
 }
