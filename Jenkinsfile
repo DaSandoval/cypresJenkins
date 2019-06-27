@@ -2,7 +2,11 @@ pipeline {
   agent any
 
   tools {nodejs "node"}
-
+  environment {
+    registry = "disckmastrer@yahoo.com"
+    registryCredential = 'danielsandoval1088'
+    dockerImage = ''
+  }
   stages {
     stage('Cloning Git') {
       steps {
