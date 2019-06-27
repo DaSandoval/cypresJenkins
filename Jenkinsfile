@@ -3,8 +3,8 @@ pipeline {
 
   tools {nodejs "node"}
   environment {
-        AWS_ACCESS_KEY_ID     = credentials('daniel')
-        AWS_SECRET_ACCESS_KEY = credentials('daniel')
+        AWS_ACCESS_KEY_ID     = credentials('disckmastrer@yahoo.com')
+        AWS_SECRET_ACCESS_KEY = credentials('danielsandoval1088')
     }
   stages {
     stage('Cloning Git') {
