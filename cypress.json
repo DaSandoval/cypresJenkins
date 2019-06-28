@@ -4,7 +4,7 @@
   "viewportHeight": 1200,
   "reporter": "mochawesome",
   "reporterOptions": {
-    "overwrite": false,
+    "overwrite": true,
     "html": false,
     "json": true
   }
