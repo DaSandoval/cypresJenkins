@@ -514,11 +514,13 @@ export class CardPage {
      * @param {string} newReminder 
      */
     updateExpirationDate(newDate, newHour, newReminder) {
-        this.clickExpirationButton();
+        //this.clickExpirationButton();
+        this.clickButton(this.addToCardExpirationButton)
         this.getDateValid(newDate);
         this.setHourValid(newHour);
         this.clickSelectReminder(newReminder);
-        this.clickSaveDateButton();
+        //this.clickSaveDateButton();
+        this.clickButton(this.saveDateButton)
     }
 
     /**
@@ -551,5 +553,43 @@ export class CardPage {
      */
     isSelectedExpirationDate(dateActual) {
         return cy.get(`.card-detail-item .is-due-${dateActual}`)
+    }
+
+    addCheckList(checkListName){
+        this.clickButton(this.addToCardCheckListButton);
+        this.setCheckListTitle(checkListName);
+        this.clickAddCheckList();
+    }
+    setCheckListTitle(checkListName){
+        cy.get(this.optionsContentButtons).find(this.searchElement).clear().type(checkListName);
+    }
+    clickAddCheckList(){
+        cy.get(this.optionsContentButtons).find(this.saveDateButton).click()
+    }
+
+    addElementsToCheckList(element){
+        let checklist = this.getArrowList(element);
+        checklist.within(()=>{
+            this.clickButton('.js-new-checklist-item-button')
+            cy.get('.js-new-checklist-item-input').type('bulevar')
+           /*  cy.get('.checklist-add-controls')
+            .first() */
+            this.clickButton('.js-add-checklist-item');
+            this.clickButton('.icon-close')
+        })
+        //js-new-checklist-item-input .js-confirm-delete
+        /* this.getArrowList(element).then((checklist)=>{
+            cy.log(checklist)
+            this.clickButton('.icon-close').click();
+            this.clickButton('.js-confirm-delete')
+            this.clickButton(this.confirmationButton)
+        }) */
+    }
+    deleteChecklist(){
+        cy.get('.js-confirm-delete').click();
+        cy.get('.js-confirm').click();
+    }
+    getArrowList(name){
+        return cy.get('.checklist h3').contains(name).closest('.checklist')
     }
 }

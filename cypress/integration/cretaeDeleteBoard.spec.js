@@ -14,7 +14,7 @@ describe('Create and delte Board', () => {
     * Test that verify if a board is created.
     */
     it('Should can create a new board', () => {
-        let boardPage = boardsPage.createBoard(boardCardListName.boardName.projectElisc);
+        let boardPage = boardsPage.createBoard(boardCardListName.boardName.projectElis);
         boardPage.getBoardTitle().text().then((boardTitle) => {
             expect(boardTitle).to.equal(boardCardListName.boardName.projectElis);
         });
@@ -29,6 +29,7 @@ describe('Create and delte Board', () => {
     it('should can remove a board', () => {
         const boardPage = boardsPage.clickExistingBoard(boardCardListName.boardName.projectElis);
         boardPage.removeBoard();
+        boardPage.isPresentMessage().should('be.visible');
         boardPage.getVerificationMessage().text().then((message) => {
             expect(message).to.equal('Board not found.');
         });

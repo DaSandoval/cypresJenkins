@@ -27,6 +27,7 @@ describe('Edit list and card', () => {
         boardPage.getArrayCardName(boardCardListName.cardName.implement).text().then((cardName) => {
             expect(cardName).to.contain(boardCardListName.cardName.implement);
         });
+        boardPage.setNewListName(boardCardListName.listName.bloqued, boardCardListName.listName.complete);
     });
 
     afterEach(()=>{

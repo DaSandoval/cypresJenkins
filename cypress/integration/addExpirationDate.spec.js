@@ -31,7 +31,7 @@ describe('Add expiration date', () => {
      * Verify that able modify the date actually to a date past due.
      */
     it('should be able to modify the current date to an expired date.', () => {
-        let date = cardPage.getDatePast();
+        let date = cardPage.getDatePast(); 
         cardPage.updateExpirationDate(date.datePast, date.hoursPast, attributesCard.reminder.before15Min);
         cardPage.getExpirationDateText().text().then((message) => {
             expect(message).to.contain('(past due)');

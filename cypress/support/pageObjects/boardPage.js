@@ -55,6 +55,7 @@ export default class BoardPage {
         this.backIconMenuTable = '.board-menu-header-back-button';
         this.moreOptionMenu = '.js-open-more';
         this.closeBoard = '.js-close-board';
+        this.menssageDeleted = '.little-message';
 
         this.deleteBoard = '.js-delete';
         this.contentAddList = '.js-add-list';
@@ -115,9 +116,7 @@ export default class BoardPage {
      */
     setNewListName(listNameActual, newListName) {
         this.clickEditListName(listNameActual);
-        cy.get(this.listNameEdit).type(newListName);
-        cy.get(this.addNewList).click();
-        this.clickCloseIcon(this.controlAddNewList);
+        cy.get(this.listNameEdit).type(newListName).type('{enter}');
     }
 
     /**
@@ -411,7 +410,8 @@ export default class BoardPage {
      */
     clickDeleteBoard() {
         cy.get(this.deleteBoard).click();
-        cy.get(this.closeButtonConfirmation).click();
+        //cy.get(this.closeButtonConfirmation).click();
+        this.clickCloseConfirmationButton();
     }
 
     /**
@@ -420,6 +420,14 @@ export default class BoardPage {
      */
     getVerificationMessage() {
         return cy.get(this.deleteMesssage);
+    }
+
+    /**
+     * Method that return the menssage if is present.
+     * @returns {Object} prommise.
+     */
+    isPresentMessage(){
+        return cy.get(this.menssageDeleted);
     }
 
     /**
@@ -659,7 +667,11 @@ export default class BoardPage {
         this.clickMenuMoreOption();
         this.clickMenuArchivedItems();
         this.clickSwitchCardList();
-        cy.get(contentNameArcivedList).contains(list).closest(contentArchivedList).within(() => {
+        cy.get(this.contentNameArcivedList).contains(list).closest(this.contentArchivedList).within(() => {
+            cy.get(this.unarchivedItem).first().click();
+        });
+        this.clickSwitchCardList();
+        cy.get(this.archivedItems).each(() => {
             cy.get(this.unarchivedItem).first().click();
         });
     }
