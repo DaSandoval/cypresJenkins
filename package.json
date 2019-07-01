@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cypress run --reporter mochawesome",
+    "test": "./node_modules/.bin/cypress run --browser chrome",
     "cypress": "cypress open",
     "generate_mochawesome_report": "marge mochawesome-report/output.json",
     "cypress:ci": "concurrently \"cypress run\" --kill-others \"ng serve\" --success first",
